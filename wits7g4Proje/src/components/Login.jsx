@@ -99,6 +99,7 @@ const Login = () => {
           onChange={handleChange}
           value={formData.email}
           invalid={errors.email}
+          data-cy="input-email"
         />
         {errors.email && <FormFeedback>{errorMessages.email}</FormFeedback>}
       </FormGroup>
@@ -112,6 +113,7 @@ const Login = () => {
           onChange={handleChange}
           value={formData.password}
           invalid={errors.password}
+          data-cy="input-password"
         />
         {errors.password && (
           <FormFeedback>{errorMessages.password}</FormFeedback>
@@ -123,10 +125,11 @@ const Login = () => {
           name="terms" 
           value={formData.terms} 
           onChange={handleChange} 
+          data-cy="terms"
         />{" "}
         <Label check>Şartlari Kabul Ediyorum</Label>
       </FormGroup>
-      <Button disabled={!isValid}>Submit</Button>
+      <Button disabled={!isValid} data-cy="submit">Submit</Button>
     </Form>
   );
 };
